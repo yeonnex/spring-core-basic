@@ -1,16 +1,18 @@
 package com.example.core.order;
 
-import com.example.core.member.*;
-import org.assertj.core.api.Assertions;
+import com.example.core.AppConfig;
+import com.example.core.member.Grade;
+import com.example.core.member.Member;
+import com.example.core.member.MemberService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 class OrderServiceTest {
-    OrderService orderService = new OrderServiceImpl();
-    MemberService memberService = new MemberServiceImpl();
-    MemberRepository memberRepository = new MemoryMemberRepository();
+    AppConfig appConfig = new AppConfig();
+    MemberService memberService = appConfig.memberService();
+    OrderService orderService = appConfig.orderService();
 
     @Test
     @DisplayName("주문 생성 - 고정 할인")

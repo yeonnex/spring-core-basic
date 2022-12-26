@@ -1,5 +1,6 @@
 package com.example.core.discount;
 
+import com.example.core.AppConfig;
 import com.example.core.member.Grade;
 import com.example.core.member.Member;
 import com.example.core.member.MemberService;
@@ -13,7 +14,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @Transactional
 class RateDiscountPolicyTest {
-    MemberService memberService = new MemberServiceImpl();
+    AppConfig appConfig = new AppConfig();
+    MemberService memberService = appConfig.memberService();
     DiscountPolicy discountPolicy = new RateDiscountPolicy();
     @Test
     @DisplayName("VIP 회원은 정률 할인이 적용된다")

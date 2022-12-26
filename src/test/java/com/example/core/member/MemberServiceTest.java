@@ -1,11 +1,13 @@
 package com.example.core.member;
 
+import com.example.core.AppConfig;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class MemberServiceTest {
-    MemberService memberService = new MemberServiceImpl();
+    AppConfig appConfig = new AppConfig();
+    MemberService memberService = appConfig.memberService();
 
     @Test
     @DisplayName("회원 가입")
