@@ -17,14 +17,14 @@ public class SpringCoreBasicApplication {
 //        AppConfig appConfig = new AppConfig();
 //        MemberService memberService = appConfig.memberService();
 
-        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
-        MemberService memberService = ac.getBean("memberService", MemberService.class);
-
-        Member member = new Member(1L, "memberA", Grade.VIP);
-        memberService.join(member);
-        Member findMember = memberService.findMember(member.getId());
-
-        System.out.println(findMember);
+//        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+//        MemberService memberService = ac.getBean("memberService", MemberService.class);
+//
+//        Member member = new Member(1L, "memberA", Grade.VIP);
+//        memberService.join(member);
+//        Member findMember = memberService.findMember(member.getId());
+//
+//        System.out.println(findMember);
     }
 
 }
